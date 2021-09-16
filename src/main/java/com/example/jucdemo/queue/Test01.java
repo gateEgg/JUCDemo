@@ -62,8 +62,8 @@ public class Test01 {
 
     /**
      * 阻塞等待
-     * 写入 offer
-     * 取出 poll
+     * 写入 put
+     * 取出 take
      */
     public static void test3() throws InterruptedException {
         ArrayBlockingQueue<Integer> blockingQueue = new ArrayBlockingQueue<>(3);

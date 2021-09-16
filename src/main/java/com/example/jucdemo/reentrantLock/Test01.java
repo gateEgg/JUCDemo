@@ -1,4 +1,4 @@
-package com.example.jucdemo.demo1;
+package com.example.jucdemo.reentrantLock;
 
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
