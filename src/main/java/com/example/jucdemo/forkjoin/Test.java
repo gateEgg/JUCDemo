@@ -63,7 +63,7 @@ public class Test {
 
 
     public static void main(String[] args) throws ExecutionException, InterruptedException {
-        psForkJoinPool();
+        test2();
     }
 
     /**
@@ -80,7 +80,7 @@ public class Test {
     }
 
     /**
-     * ForkJoin计算 因为堆内存不足 未计算出结果
+     * ForkJoin计算 881ms
      * @throws ExecutionException
      * @throws InterruptedException
      */
@@ -93,7 +93,7 @@ public class Test {
         Long sum = submit.get();
 
         long end = System.currentTimeMillis();
-        System.out.println("sum=" + sum + "时间消耗为："+ (end - start));
+        System.out.println("sum=" + sum + ";时间消耗为："+ (end - start));
     }
 
     /**

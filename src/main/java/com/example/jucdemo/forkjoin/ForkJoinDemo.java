@@ -14,10 +14,13 @@ import java.util.concurrent.RecursiveTask;
  * @Date 2021/9/14 11:50 上午
  */
 public class ForkJoinDemo extends RecursiveTask<Long> {
+
+    private static final long serialVersionUID = 1L;
+
     private long start;
     private long end;
 
-    private final long temp = 10000L;
+    private final long temp = 100000L;
 
     public ForkJoinDemo(long start, long end) {
         this.start = start;
@@ -33,7 +36,8 @@ public class ForkJoinDemo extends RecursiveTask<Long> {
             }
             return sum;
         } else {
-            long middle = (end - start) / 2;
+            // 注意任务的均分，不然可能会报错
+            long middle = (end + start) / 2;
             ForkJoinDemo task1 = new ForkJoinDemo(start, middle);
             // 拆分任务 把任务压入队列
             task1.fork();
